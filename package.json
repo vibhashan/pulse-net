@@ -1,0 +1,28 @@
+{
+  "name": "pulse-net",
+  "version": "1.0.0",
+  "description": "A custom web browser",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vibhashan/pulse-net.git"
+  },
+  "keywords": [
+    "electron",
+    "react"
+  ],
+  "author": "Vibhashana Ranhinda",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vibhashan/pulse-net/issues"
+  },
+  "homepage": "https://github.com/vibhashan/pulse-net#readme",
+  "devDependencies": {
+    "electron": "^25.2.0",
+    "electron-reloader": "^1.2.3"
+  }
+}
