@@ -2,6 +2,19 @@
  * Import necessary packages
  */
 const { app, BrowserWindow, screen } = require('electron');
+const { spawn } = require('cross-spawn');
+const path = require('path');
+
+// To run the script in 'react' folder
+const reactProcess = spawn('npm', ['run', 'dev'], { cwd: path.join(__dirname, '..', 'react') });
+
+reactProcess.stdout.on('data', (data) => {
+    console.log(`React: ${data}`);
+});
+
+reactProcess.stderr.on('data', (data) => {
+    console.error(`React error: ${data}`);
+});
 
 // Enable hot-reload in electron
 try {
@@ -21,12 +34,14 @@ function createWindow(height, width) {
         titleBarOverlay: {
             show: true,
             color: 'white',
-        }
+        },
     });
 
     // Load the particular URL
     window.loadURL('http://localhost:3000');
+
 }
+
 
 app.whenReady().then(() => {
 
@@ -51,4 +66,5 @@ app.on('activate', () => {
     if (BrowserWindow.getAllWindows().length === 0) {
         createWindow();
     };
-})
+});
+

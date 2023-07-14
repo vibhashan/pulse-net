@@ -1,43 +1,72 @@
-import { Tabs } from "@sinm/react-chrome-tabs";
-import { useState } from "react";
-import { active, close, reorder } from "../utils/tabOps";
-import "../assets/styles/chrome-tabs.css";
+import React, { useRef, useState } from "react";
+import { Tabs } from "antd";
+
+const initialItems = [
+  {
+    label: "😉 New Tab",
+    key: "1",
+  },
+];
 
 export default function TabGroup() {
-  const [tabs, setTabs] = useState([
-    { id: "abc", title: "New Tab", active: true },
-  ]);
+  const [activeKey, setActiveKey] = useState(initialItems[0].key);
+  const [items, setItems] = useState(initialItems);
 
-  // Function to determine the currently active tab
-  const active = (id) => {
-    setTabs(tabs.map((tab) => ({ ...tab, active: id === tab.id })));
+  const newTabIndex = useRef(0);
+
+  const onChange = (newActiveKey) => {
+    setActiveKey(newActiveKey);
   };
 
-  // Function to close a tab
-  const close = (id) => {
-    setTabs(tabs.filter((tab) => tab.id !== id));
+  const add = () => {
+    const newActiveKey = `newTab${newTabIndex.current++}`;
+    const newPanes = [...items];
+
+    newPanes.push({
+      label: "New Tab",
+      key: newActiveKey,
+    });
+
+    setItems(newPanes);
+    setActiveKey(newActiveKey);
   };
 
-  // Function to reorder a tab
-  const reorder = (tabId, fromIndex, toIndex) => {
-    const beforeTab = tabs.find((tab) => tab.id === tabId);
+  const remove = (targetKey) => {
+    let newActiveKey = activeKey;
+    let lastIndex = -1;
+    items.forEach((item, i) => {
+      if (item.key === targetKey) {
+        lastIndex = i - 1;
+      }
+    });
 
-    if (!beforeTab) {
-      return;
+    const newPanes = items.filter((item) => item.key !== targetKey);
+    if (newPanes.length && newActiveKey === targetKey) {
+      if (lastIndex >= 0) {
+        newActiveKey = newPanes[lastIndex].key;
+      } else {
+        newActiveKey = newPanes[0].key;
+      }
     }
+    setItems(newPanes);
+    setActiveKey(newActiveKey);
+  };
 
-    let newTabs = tabs.filter((tab) => tab.id !== tabId);
-
-    newTabs.splice(toIndex, 0, beforeTab);
-    setTabs(newTabs);
+  const onEdit = (targetKey, action) => {
+    if (action === "add") {
+      add();
+    } else {
+      remove(targetKey);
+    }
   };
 
   return (
     <Tabs
-      onTabClose={close}
-      onTabReorder={reorder}
-      onTabActive={active}
-      tabs={tabs}
+      type="editable-card"
+      onChange={onChange}
+      activeKey={activeKey}
+      onEdit={onEdit}
+      items={items}
     />
   );
 }
