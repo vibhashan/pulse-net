@@ -26,6 +26,7 @@
     "electron": "^25.3.0"
   },
   "dependencies": {
+    "cross-spawn": "^7.0.3",
     "electron-reloader": "^1.2.3"
   }
 }
