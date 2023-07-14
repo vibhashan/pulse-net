@@ -1,9 +1,7 @@
 /**
  * Import necessary packages
  */
-const electron = require('electron');
 const { app, BrowserWindow, screen } = require('electron');
-const path = require('path');
 
 // Enable hot-reload in electron
 try {
@@ -14,10 +12,16 @@ try {
 
 // Function to create new window
 function createWindow(height, width) {
+
     // Instantiate a BrowserWindow object
     const window = new BrowserWindow({
         height: height,
-        width: width
+        width: width,
+        titleBarStyle: 'hidden',
+        titleBarOverlay: {
+            show: true,
+            color: 'white',
+        }
     });
 
     // Load the particular URL
@@ -45,7 +49,6 @@ app.on('window-all-closed', () => {
 // Invoke createWindow function only when there are no windows
 app.on('activate', () => {
     if (BrowserWindow.getAllWindows().length === 0) {
-        createWindow()
+        createWindow();
     };
 })
-

@@ -1,7 +1,7 @@
 {
-  "name": "pulse-net",
+  "name": "electron",
   "version": "1.0.0",
-  "description": "A custom web browser",
+  "description": "Electron and React powered custom web browser",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -13,7 +13,8 @@
   },
   "keywords": [
     "electron",
-    "react"
+    "react",
+    "vite"
   ],
   "author": "Vibhashana Ranhinda",
   "license": "ISC",
@@ -22,7 +23,9 @@
   },
   "homepage": "https://github.com/vibhashan/pulse-net#readme",
   "devDependencies": {
-    "electron": "^25.2.0",
+    "electron": "^25.3.0"
+  },
+  "dependencies": {
     "electron-reloader": "^1.2.3"
   }
 }
