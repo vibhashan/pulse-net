@@ -2,19 +2,19 @@
  * Import necessary packages
  */
 const { app, BrowserWindow, screen } = require('electron');
-const { spawn } = require('cross-spawn');
-const path = require('path');
+// const { spawn } = require('cross-spawn');
+// const path = require('path');
 
-// To run the script in 'react' folder
-const reactProcess = spawn('npm', ['run', 'dev'], { cwd: path.join(__dirname, '..', 'react') });
+// // To run the script in 'react' folder
+// const reactProcess = spawn('npm', ['run', 'dev'], { cwd: path.join(__dirname, '..', 'react') });
 
-reactProcess.stdout.on('data', (data) => {
-    console.log(`React: ${data}`);
-});
+// reactProcess.stdout.on('data', (data) => {
+//     console.log(`React: ${data}`);
+// });
 
-reactProcess.stderr.on('data', (data) => {
-    console.error(`React error: ${data}`);
-});
+// reactProcess.stderr.on('data', (data) => {
+//     console.error(`React error: ${data}`);
+// });
 
 // Enable hot-reload in electron
 try {
@@ -51,6 +51,10 @@ app.whenReady().then(() => {
     // Invoke createWindow function by passing height, width as args
     createWindow(height, width);
 
+    reloadButton.addEventListener("click", () => {
+        window.webContents.reload();
+    });
+
 }).catch(err => console.log(err));
 
 // Close app window when all windows are closed (Windows OS behaviour)
@@ -67,4 +71,9 @@ app.on('activate', () => {
         createWindow();
     };
 });
+
+/**
+ * Make the window draggable
+ */
+
 

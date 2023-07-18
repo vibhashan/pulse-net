@@ -1,0 +1,40 @@
+.main-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.browser-logo {
+  margin-top: 140px;
+}
+
+.browser-name {
+  width: fit-content;
+  height: fit-content;
+  color: #24a8df;
+  font-size: 80px;
+  font-family: Roboto;
+  font-weight: 700;
+  letter-spacing: 2.4px;
+  word-wrap: break-word;
+  margin-top: 140px;
+}
+
+.browser-slogan {
+  width: fit-content;
+  height: fit-content;
+  color: #27AEE5;
+  font-size: 20px;
+  font-family: Roboto;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 1px;
+  word-wrap: break-word;
+  margin-left: 6px;
+  position: relative;
+  bottom: 20px;
+}
+
+#search-enginebox{
+    border: 1px solid black;
+}
