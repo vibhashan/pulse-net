@@ -1,19 +1,20 @@
 import React, { useRef, useState } from "react";
 import { Tabs } from "antd";
+import "../assets/styles/Tabs.css";
+import TabOps from "./TabOps";
 
-const initialItems = [
-  {
-    label: "😉 New Tab",
-    key: "1",
-  },
-];
+export default function TabGroup({shouldShow}) {
+  const initialItems = [
+    {
+      label: "New Tab",
+      children: <TabOps shouldShow={shouldShow}/>,
+      key: "1",
+    },
+  ];
 
-export default function TabGroup() {
   const [activeKey, setActiveKey] = useState(initialItems[0].key);
   const [items, setItems] = useState(initialItems);
-
   const newTabIndex = useRef(0);
-
   const onChange = (newActiveKey) => {
     setActiveKey(newActiveKey);
   };
@@ -21,12 +22,11 @@ export default function TabGroup() {
   const add = () => {
     const newActiveKey = `newTab${newTabIndex.current++}`;
     const newPanes = [...items];
-
     newPanes.push({
       label: "New Tab",
+      children: <TabOps shouldShow={true}/>,
       key: newActiveKey,
     });
-
     setItems(newPanes);
     setActiveKey(newActiveKey);
   };
@@ -41,6 +41,7 @@ export default function TabGroup() {
     });
 
     const newPanes = items.filter((item) => item.key !== targetKey);
+
     if (newPanes.length && newActiveKey === targetKey) {
       if (lastIndex >= 0) {
         newActiveKey = newPanes[lastIndex].key;
@@ -67,6 +68,7 @@ export default function TabGroup() {
       activeKey={activeKey}
       onEdit={onEdit}
       items={items}
+      size="small"
     />
   );
 }

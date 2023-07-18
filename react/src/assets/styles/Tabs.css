@@ -1,0 +1,41 @@
+.ant-tabs-tab-btn {
+  color: black !important;
+}
+
+.ant-tabs-tab:hover {
+  cursor: default !important;
+}
+
+.ant-tabs-tab-with-remove {
+  background-color: #e4e4e4 !important;
+  border-bottom: 1px solid #f0f0f0 !important;
+}
+
+.ant-tabs-tab-remove {
+  cursor: default !important;
+}
+
+.ant-tabs-tab-active {
+  background-color: white !important;
+}
+
+.ant-tabs-nav {
+  border-bottom: 1px solid #f0f0f0 !important;
+}
+
+.ant-tabs-nav-add {
+  border: none !important;
+}
+
+.ant-tabs-nav-add:hover {
+  cursor: default !important;
+}
+
+.anticon-plus {
+  color: black;
+  opacity: 30% !important;
+}
+
+.anticon-plus:hover {
+  opacity: 100% !important;
+}

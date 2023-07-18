@@ -1,18 +1,15 @@
-import { useState, useEffect } from "react";
-import TabGroup from "./components/TabGroup";
 import "./App.css";
 
+import Home from "./pages/Home";
+import Results from "./pages/Results";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 export default function App() {
   return (
-    <>
-      <TabGroup />
-      {/* For the search box */}
-      <div className="gcse-searchbox"></div>
-
-      {/* For the search results */}
-      <div className="gcse-searchresults"></div>
-
-      
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/results" element={<Results />} />
+      </Routes>
+    </Router>
   );
 }

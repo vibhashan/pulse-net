@@ -1,0 +1,85 @@
+body {
+  -webkit-app-region: drag;
+}
+
+button,
+div {
+  -webkit-app-region: no-drag;
+  /* -webkit-user-select: none;*/
+  user-select: none;
+}
+
+/* Google search box customization */
+
+.gsc-control-cse {
+  border: 0 !important;
+  padding: 6px 8px 6px 10px !important;
+  margin: 0px;
+  border-radius: 2px;
+  overflow: hidden;
+}
+form.gsc-search-box,
+table.gsc-search-box {
+  margin-bottom: 0 !important;
+}
+.gcse-search-box {
+  border: 0 !important;
+  background: #387deb !important;
+}
+.gcse-search-box-tools .gcse-search-box .gcse-input {
+  padding-right: 0 !important;
+}
+#gs_tti50 {
+  padding: 0px 0 !important;
+}
+#gsc-i-id1 {
+  color: black !important;
+  text-indent: 10px !important;
+  font-size: 14px !important;
+  line-height: 1 !important;
+  background: none !important;
+}
+#gsc-i-id1::-webkit-input-placeholder {
+  color: #a4a5a6 !important;
+}
+#gsc-i-id1::-as-input-placeholder {
+  color: #fff;
+}
+#gsc-i-id1::-moz-placeholder {
+  color: #fff;
+  opacity: 1;
+}
+
+.gsib_b {
+  display: none !important;
+}
+.gsc-search-button-v2 {
+  padding: 7.5px !important;
+  margin-left: 0px !important;
+  outline: none !important;
+  border: 6px !important;
+  cursor: pointer;
+  border-radius: 50% !important;
+}
+.gsc-search-button-v2:hover {
+  cursor: pointer;
+  background-color: #24a8df !important;
+  background-image: none !important;
+  transition: 1s;
+}
+
+.gsc-search-button-v2:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  background-color: #24a8df !important;
+  background-image: none !important;
+}
+
+.gsc-control-searchbox-only {
+  border: 1px solid #8dc4dc;
+  width: 533px;
+  padding: 5px;
+  position: relative;
+  right: 25px;
+  border-radius: 5px !important;
+}
