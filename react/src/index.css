@@ -1,13 +1,5 @@
 body {
-  -webkit-app-region: drag;
   background-color: white;
-}
-
-button,
-div {
-  -webkit-app-region: no-drag;
-  /* -webkit-user-select: none;*/
-  user-select: none;
 }
 
 /* Dark mode and Light mode CSS */
@@ -18,7 +10,6 @@ div {
 .light {
   background-color: white;
 }
-
 
 /* Google search box customization */
 .gsc-control-cse {
