@@ -17,13 +17,35 @@
 
 .divider {
   border: 1px solid #f0f0f0;
+  margin-top: 15px;
 }
 
 .mode-btn {
   float: right;
   position: relative;
-  bottom: 45px;
+  bottom: 48px;
   border: none;
   background-color: white;
   cursor: pointer;
+  margin-right: 10px;
+}
+
+.anticon-arrow-right {
+  cursor: default !important;
+}
+
+#urlBar {
+  width: 85%;
+  border: 1px solid #8dc4dc;
+  border-radius: 15px;
+  text-indent: 10px;
+  font-family: Roboto;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 14px;
+  outline: none;
+}
+
+#urlBar:focus {
+  border: 1px solid #24a8df;
 }
