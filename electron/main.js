@@ -7,15 +7,15 @@ const { spawn } = require('cross-spawn');
 const { portKill } = require('port-process-killer');
 
 // To run the vite dev server
-const reactProcess = spawn('npm', ['run', 'dev'], { cwd: path.join(__dirname, '..', 'react') });
+// const reactProcess = spawn('npm', ['run', 'dev'], { cwd: path.join(__dirname, '..', 'react') });
 
-reactProcess.stdout.on('data', (data) => {
-    console.log(`React: ${data}`);
-});
+// reactProcess.stdout.on('data', (data) => {
+//     console.log(`React: ${data}`);
+// });
 
-reactProcess.stderr.on('data', (data) => {
-    console.error(`React error: ${data}`);
-});
+// reactProcess.stderr.on('data', (data) => {
+//     console.error(`React error: ${data}`);
+// });
 
 // Enable hot-reload in electron
 try {
