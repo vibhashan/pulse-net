@@ -1,6 +1,5 @@
 import { useEffect } from "react";
-import Logo from "../assets/images/logo.png";
-import "../assets/styles/SearchEngine.css";
+import "../assets/styles/light/SearchEngine.css";
 
 export default function SearchEngine() {
   useEffect(() => {
@@ -10,7 +9,7 @@ export default function SearchEngine() {
     script.async = true;
 
     document.body.appendChild(script);
-  });
+  }, []);
 
   return (
     <>
@@ -21,7 +20,7 @@ export default function SearchEngine() {
             Experience lightening fast searches!
           </div>
         </div>
-        <img className="browser-logo" src={Logo} height={98} width={112} />
+        <img className="browser-logo"  src="/images/logo.png" height={98} width={112} />
       </div>
 
       {/* For the search box */}

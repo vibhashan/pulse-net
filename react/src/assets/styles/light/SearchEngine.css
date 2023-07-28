@@ -23,18 +23,23 @@
 .browser-slogan {
   width: fit-content;
   height: fit-content;
-  color: #27AEE5;
+  color: #27aee5;
   font-size: 20px;
   font-family: Roboto;
   font-style: italic;
   font-weight: 400;
   letter-spacing: 1px;
   word-wrap: break-word;
-  margin-left: 6px;
+  margin-left: 4px;
   position: relative;
-  bottom: 20px;
+  bottom: 10px;
 }
 
-#search-enginebox{
-    border: 1px solid black;
+#search-enginebox {
+  border: 1px solid black;
+}
+
+.results-searchbox {
+  margin-left: 20px;
+  margin-bottom: 15px;
 }

@@ -1,5 +1,6 @@
 body {
   -webkit-app-region: drag;
+  background-color: white;
 }
 
 button,
@@ -9,8 +10,17 @@ div {
   user-select: none;
 }
 
-/* Google search box customization */
+/* Dark mode and Light mode CSS */
+.dark {
+  background-color: #2f2f2f;
+}
 
+.light {
+  background-color: white;
+}
+
+
+/* Google search box customization */
 .gsc-control-cse {
   border: 0 !important;
   padding: 6px 8px 6px 10px !important;
@@ -80,6 +90,6 @@ table.gsc-search-box {
   width: 533px;
   padding: 5px;
   position: relative;
-  right: 25px;
+  right: 10px;
   border-radius: 5px !important;
 }
