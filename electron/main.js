@@ -6,16 +6,6 @@ const path = require('path');
 const { spawn } = require('cross-spawn');
 const { portKill } = require('port-process-killer');
 
-// To run the vite dev server
-// const reactProcess = spawn('npm', ['run', 'dev'], { cwd: path.join(__dirname, '..', 'react') });
-
-// reactProcess.stdout.on('data', (data) => {
-//     console.log(`React: ${data}`);
-// });
-
-// reactProcess.stderr.on('data', (data) => {
-//     console.error(`React error: ${data}`);
-// });
 
 // Enable hot-reload in electron
 try {
@@ -23,6 +13,19 @@ try {
 } catch (err) {
     console.log(err);
 };
+
+// Function to run the vite dev server
+function runViteServer() {
+    const reactProcess = spawn('npm', ['run', 'dev'], { cwd: path.join(__dirname, '..', 'react') });
+
+    reactProcess.stdout.on('data', (data) => {
+        console.log(`React: ${data}`);
+    });
+
+    reactProcess.stderr.on('data', (data) => {
+        console.error(`React error: ${data}`);
+    });
+}
 
 // Create a global variable for main window object
 let window;
@@ -46,7 +49,8 @@ function createWindow(height, width) {
     });
 
     // Load the particular URL
-    window.loadURL('http://localhost:3000');
+    window.loadURL('http://localhost:3000/');
+
 }
 
 
@@ -54,6 +58,9 @@ app.whenReady().then(() => {
 
     // Get full height and width of current screen
     const { width, height } = screen.getPrimaryDisplay().workAreaSize;
+
+    // Start the vite dev server
+    runViteServer();
 
     // Invoke createWindow function by passing height, width as args
     createWindow(height, width);
