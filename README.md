@@ -14,4 +14,4 @@ from a terminal command.
 2. Dark mode.
 3. Right-click/Context Menu.
 
-Play around with the applicatioon and feel free to make any modifications/contributions. Drop your thoughts as well 😉
+Play around with the application and feel free to make any modifications/contributions. Drop your thoughts as well 😉
